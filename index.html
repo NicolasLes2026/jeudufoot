@@ -27,7 +27,13 @@ body{
 main{width:100%;max-width:560px}
 header{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:16px}
 h1{font-size:clamp(1.6rem,6vw,2.2rem);font-weight:800;margin:0;letter-spacing:-.02em}
-.score{font-size:.95rem;opacity:.9;white-space:nowrap}
+.score{text-align:right;white-space:nowrap;position:relative}
+.pts{font-size:1.9rem;font-weight:800;line-height:1;letter-spacing:-.02em}
+.pts small{font-size:.9rem;font-weight:600;opacity:.85;margin-left:3px}
+.sub{font-size:.85rem;opacity:.85;margin-top:2px}
+.gain{position:absolute;right:0;top:-6px;color:var(--ok);font-weight:800;font-size:1.1rem;opacity:0;pointer-events:none}
+.gain.go{animation:floatup 1.1s ease-out}
+@keyframes floatup{0%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(-30px)}}
 .card{
   background:var(--card);color:var(--ink);border-radius:18px;padding:22px 20px 20px;
   box-shadow:0 10px 30px rgba(0,0,0,.35); position:relative; overflow:hidden;
@@ -88,7 +94,11 @@ canvas{position:fixed;inset:0;pointer-events:none;z-index:10}
 <main>
   <header>
     <h1>Quel est ce joueur ?</h1>
-    <div class="score" id="score" aria-live="polite"></div>
+    <div class="score" aria-live="polite">
+      <div class="pts"><span id="pts">0</span><small>pts</small></div>
+      <div class="sub" id="sub"></div>
+      <span class="gain" id="gain"></span>
+    </div>
   </header>
 
   <section class="card" id="card">
@@ -118,7 +128,8 @@ canvas{position:fixed;inset:0;pointer-events:none;z-index:10}
 <script>
 (function(){
   "use strict";
-  var players=[], deck=[], current=null, answered=false, good=0, total=0, streak=0;
+  var players=[], deck=[], current=null, answered=false, good=0, total=0, streak=0, points=0, best=0, shown=0;
+  try{best=parseInt(localStorage.getItem("foot-best"),10)||0}catch(e){}
   var $=function(id){return document.getElementById(id)};
   var card=$("card"), clubsEl=$("clubs"), guess=$("guess");
 
@@ -129,13 +140,32 @@ canvas{position:fixed;inset:0;pointer-events:none;z-index:10}
   }).then(function(data){
     players=data.filter(function(p){return p.clubs&&p.clubs.length>=2});
     if(!players.length) throw new Error("vide");
-    $("score").textContent=players.length+" joueurs";
+    renderSub(players.length+" joueurs");
   }).catch(function(){
     $("intro").classList.add("hidden");
     $("next").classList.add("hidden");
     var e=$("error"); e.classList.remove("hidden");
     e.textContent="Impossible de charger players.json. Vérifie qu’il est dans le même dossier que index.html. En local, ouvre le jeu via un petit serveur (python -m http.server) plutôt qu’en double-cliquant le fichier.";
   });
+
+  // --- Points ------------------------------------------------------------
+  // 10 points par bonne réponse + 5 de bonus par réponse d'affilée (bonus max : 25)
+  function gainFor(s){return 10+Math.min(25,5*(s-1))}
+  function renderSub(extra){
+    var parts=[];
+    if(extra) parts.push(extra);
+    if(best) parts.push("record "+best);
+    $("sub").textContent=parts.join(" · ");
+  }
+  function countTo(target){
+    var from=shown, t0=performance.now(), dur=600;
+    (function step(now){
+      var k=Math.min(1,(now-t0)/dur);
+      shown=Math.round(from+(target-from)*k);
+      $("pts").textContent=shown;
+      if(k<1) requestAnimationFrame(step);
+    })(t0);
+  }
 
   // --- Tirage sans répétition -------------------------------------------
   function refill(){
@@ -191,12 +221,13 @@ canvas{position:fixed;inset:0;pointer-events:none;z-index:10}
   function finish(ok,gaveUp){
     if(answered||!current) return;
     answered=true; total++;
-    if(ok){good++;streak++}else{streak=0}
+    var gain=0;
+    if(ok){good++;streak++;gain=gainFor(streak);points+=gain}else{streak=0}
     card.className="card "+(ok?"good":"bad");
     $("game").classList.add("hidden");
     var v=$("verdict");
     v.className="verdict "+(ok?"ok":"ko");
-    v.textContent=ok?"Bien joué !":(gaveUp?"Pas de souci.":"Raté !");
+    v.textContent=ok?"Bien joué ! +"+gain+" pts":(gaveUp?"Pas de souci.":"Raté !");
     var a=$("answer"); a.textContent="C’était ";
     var strong=document.createElement("strong"); strong.textContent=current.name; a.appendChild(strong);
     if(current.wiki){
@@ -206,7 +237,10 @@ canvas{position:fixed;inset:0;pointer-events:none;z-index:10}
     }
     $("result").classList.add("show");
     var nx=$("next"); nx.textContent="Joueur suivant"; nx.className="start next"; nx.focus({preventScroll:true});
-    $("score").textContent=good+"/"+total+(streak>1?" · série de "+streak:"");
+    if(points>best){best=points;try{localStorage.setItem("foot-best",String(best))}catch(e){}}
+    renderSub(good+"/"+total+(streak>1?" · série de "+streak:""));
+    countTo(points);
+    if(gain){var g=$("gain");g.textContent="+"+gain;g.classList.remove("go");void g.offsetWidth;g.classList.add("go")}
     if(ok) confetti();
   }
 

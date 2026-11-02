@@ -64,44 +64,6 @@
     "wiki": "https://en.wikipedia.org/wiki/Gr%C3%A9gory_Bourillon"
   },
   {
-    "name": "David Zitelli",
-    "answers": [
-      "David Zitelli",
-      "Zitelli"
-    ],
-    "clubs": [
-      {
-        "name": "Nancy",
-        "loan": false
-      },
-      {
-        "name": "Metz",
-        "loan": false
-      },
-      {
-        "name": "Strasbourg",
-        "loan": false
-      },
-      {
-        "name": "Karlsruher SC",
-        "loan": false
-      },
-      {
-        "name": "Strasbourg",
-        "loan": false
-      },
-      {
-        "name": "Hibernian",
-        "loan": false
-      },
-      {
-        "name": "Istres",
-        "loan": false
-      }
-    ],
-    "wiki": "https://en.wikipedia.org/wiki/David_Zitelli"
-  },
-  {
     "name": "Matt Moussilou",
     "answers": [
       "Matt Moussilou",
@@ -210,52 +172,6 @@
     "wiki": "https://en.wikipedia.org/wiki/C%C3%A9dric_Barbosa"
   },
   {
-    "name": "Habib Bamogo",
-    "answers": [
-      "Bamogo",
-      "Habib Bamogo"
-    ],
-    "clubs": [
-      {
-        "name": "Montpellier",
-        "loan": false
-      },
-      {
-        "name": "Marseille",
-        "loan": false
-      },
-      {
-        "name": "Nantes",
-        "loan": true
-      },
-      {
-        "name": "Celta Vigo",
-        "loan": true
-      },
-      {
-        "name": "Nice",
-        "loan": false
-      },
-      {
-        "name": "Panetolikos",
-        "loan": false
-      },
-      {
-        "name": "Doncaster Rovers",
-        "loan": false
-      },
-      {
-        "name": "Botev Plovdiv",
-        "loan": false
-      },
-      {
-        "name": "Persiram Raja Ampat",
-        "loan": false
-      }
-    ],
-    "wiki": "https://en.wikipedia.org/wiki/Habib_Bamogo"
-  },
-  {
     "name": "Laurent Batlles",
     "answers": [
       "Batlles",
@@ -338,36 +254,6 @@
       }
     ],
     "wiki": "https://en.wikipedia.org/wiki/%C3%89douard_Ciss%C3%A9"
-  },
-  {
-    "name": "Francis Llacer",
-    "answers": [
-      "Francis Llacer",
-      "Llacer"
-    ],
-    "clubs": [
-      {
-        "name": "Paris Saint-Germain",
-        "loan": false
-      },
-      {
-        "name": "Strasbourg",
-        "loan": true
-      },
-      {
-        "name": "Feyenoord",
-        "loan": false
-      },
-      {
-        "name": "Lille",
-        "loan": false
-      },
-      {
-        "name": "Paris Saint-Germain",
-        "loan": false
-      }
-    ],
-    "wiki": "https://en.wikipedia.org/wiki/Francis_Llacer"
   },
   {
     "name": "Jean-Claude Darcheville",
@@ -626,44 +512,6 @@
     "wiki": "https://en.wikipedia.org/wiki/Toifilou_Maoulida"
   },
   {
-    "name": "Roger Boli",
-    "answers": [
-      "Boli",
-      "Roger Boli"
-    ],
-    "clubs": [
-      {
-        "name": "Auxerre",
-        "loan": false
-      },
-      {
-        "name": "Lille",
-        "loan": false
-      },
-      {
-        "name": "Lens",
-        "loan": false
-      },
-      {
-        "name": "Le Havre",
-        "loan": false
-      },
-      {
-        "name": "Walsall",
-        "loan": false
-      },
-      {
-        "name": "Dundee United",
-        "loan": false
-      },
-      {
-        "name": "AFC Bournemouth",
-        "loan": false
-      }
-    ],
-    "wiki": "https://en.wikipedia.org/wiki/Roger_Boli"
-  },
-  {
     "name": "Mathieu Bodmer",
     "answers": [
       "Bodmer",
@@ -704,5 +552,555 @@
       }
     ],
     "wiki": "https://en.wikipedia.org/wiki/Mathieu_Bodmer"
+  },
+  {
+    "name": "Jérémy Clément",
+    "answers": [
+      "Clément",
+      "Jérémy Clément"
+    ],
+    "clubs": [
+      {
+        "name": "Lyon",
+        "loan": false
+      },
+      {
+        "name": "Rangers",
+        "loan": false
+      },
+      {
+        "name": "Paris Saint-Germain",
+        "loan": false
+      },
+      {
+        "name": "Saint-Étienne",
+        "loan": false
+      },
+      {
+        "name": "Nancy",
+        "loan": false
+      },
+      {
+        "name": "Bourgoin-Jallieu",
+        "loan": false
+      }
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/J%C3%A9r%C3%A9my_Cl%C3%A9ment"
+  },
+  {
+    "name": "Loïc Rémy",
+    "answers": [
+      "Loïc Rémy",
+      "Rémy"
+    ],
+    "clubs": [
+      {
+        "name": "Lyon",
+        "loan": false
+      },
+      {
+        "name": "Lens",
+        "loan": true
+      },
+      {
+        "name": "Nice",
+        "loan": false
+      },
+      {
+        "name": "Marseille",
+        "loan": false
+      },
+      {
+        "name": "Queens Park Rangers",
+        "loan": false
+      },
+      {
+        "name": "Newcastle United",
+        "loan": true
+      },
+      {
+        "name": "Chelsea",
+        "loan": false
+      },
+      {
+        "name": "Crystal Palace",
+        "loan": true
+      },
+      {
+        "name": "Las Palmas",
+        "loan": false
+      },
+      {
+        "name": "Getafe",
+        "loan": true
+      },
+      {
+        "name": "Lille",
+        "loan": false
+      },
+      {
+        "name": "Çaykur Rizespor",
+        "loan": false
+      },
+      {
+        "name": "Adana Demirspor",
+        "loan": false
+      },
+      {
+        "name": "Brest",
+        "loan": false
+      }
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Lo%C3%AFc_R%C3%A9my"
+  },
+  {
+    "name": "Vladimír Šmicer",
+    "answers": [
+      "Vladimír Šmicer",
+      "Šmicer"
+    ],
+    "clubs": [
+      {
+        "name": "Slavia Prague",
+        "loan": false
+      },
+      {
+        "name": "Lens",
+        "loan": false
+      },
+      {
+        "name": "Liverpool",
+        "loan": false
+      },
+      {
+        "name": "Bordeaux",
+        "loan": false
+      },
+      {
+        "name": "Slavia Prague",
+        "loan": false
+      }
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Vladim%C3%ADr_%C5%A0micer"
+  },
+  {
+    "name": "Jérémie Bréchet",
+    "answers": [
+      "Bréchet",
+      "Jérémie Bréchet"
+    ],
+    "clubs": [
+      {
+        "name": "Lyon",
+        "loan": false
+      },
+      {
+        "name": "Inter Milan",
+        "loan": false
+      },
+      {
+        "name": "Real Sociedad",
+        "loan": false
+      },
+      {
+        "name": "Sochaux",
+        "loan": false
+      },
+      {
+        "name": "PSV",
+        "loan": false
+      },
+      {
+        "name": "Sochaux",
+        "loan": false
+      },
+      {
+        "name": "Troyes",
+        "loan": false
+      },
+      {
+        "name": "Bordeaux",
+        "loan": false
+      },
+      {
+        "name": "Gazélec Ajaccio",
+        "loan": false
+      }
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/J%C3%A9r%C3%A9mie_Br%C3%A9chet"
+  },
+  {
+    "name": "Djibril Cissé",
+    "answers": [
+      "Cissé",
+      "Djibril Cissé"
+    ],
+    "clubs": [
+      {
+        "name": "Auxerre",
+        "loan": false
+      },
+      {
+        "name": "Liverpool",
+        "loan": false
+      },
+      {
+        "name": "Marseille",
+        "loan": true
+      },
+      {
+        "name": "Sunderland",
+        "loan": true
+      },
+      {
+        "name": "Panathinaikos",
+        "loan": false
+      },
+      {
+        "name": "Lazio",
+        "loan": false
+      },
+      {
+        "name": "Queens Park Rangers",
+        "loan": false
+      },
+      {
+        "name": "Al-Gharafa",
+        "loan": true
+      },
+      {
+        "name": "Kuban Krasnodar",
+        "loan": false
+      },
+      {
+        "name": "Bastia",
+        "loan": false
+      },
+      {
+        "name": "Saint-Pierroise",
+        "loan": false
+      },
+      {
+        "name": "Yverdon",
+        "loan": false
+      },
+      {
+        "name": "AC Vicenza 1902",
+        "loan": false
+      },
+      {
+        "name": "Panathinaikos Chicago",
+        "loan": false
+      }
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Djibril_Ciss%C3%A9"
+  },
+  {
+    "name": "Benoît Trémoulinas",
+    "answers": [
+      "Benoît Trémoulinas",
+      "Trémoulinas"
+    ],
+    "clubs": [
+      {
+        "name": "Bordeaux",
+        "loan": false
+      },
+      {
+        "name": "Dynamo Kyiv",
+        "loan": false
+      },
+      {
+        "name": "Saint-Étienne",
+        "loan": true
+      },
+      {
+        "name": "Sevilla",
+        "loan": false
+      }
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Beno%C3%AEt_Tr%C3%A9moulinas"
+  },
+  {
+    "name": "Moussa Sissoko",
+    "answers": [
+      "Moussa Sissoko",
+      "Sissoko"
+    ],
+    "clubs": [
+      {
+        "name": "Toulouse",
+        "loan": false
+      },
+      {
+        "name": "Newcastle United",
+        "loan": false
+      },
+      {
+        "name": "Tottenham Hotspur",
+        "loan": false
+      },
+      {
+        "name": "Watford",
+        "loan": false
+      },
+      {
+        "name": "Nantes",
+        "loan": false
+      },
+      {
+        "name": "Watford",
+        "loan": false
+      },
+      {
+        "name": "Panathinaikos",
+        "loan": false
+      }
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Moussa_Sissoko"
+  },
+  {
+    "name": "Franck Jurietti",
+    "answers": [
+      "Franck Jurietti",
+      "Jurietti"
+    ],
+    "clubs": [
+      {
+        "name": "Lyon",
+        "loan": false
+      },
+      {
+        "name": "Gueugnon",
+        "loan": false
+      },
+      {
+        "name": "Bastia",
+        "loan": false
+      },
+      {
+        "name": "Monaco",
+        "loan": false
+      },
+      {
+        "name": "Marseille",
+        "loan": true
+      },
+      {
+        "name": "Bordeaux",
+        "loan": false
+      }
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Franck_Jurietti"
+  },
+  {
+    "name": "Patrick Vieira",
+    "answers": [
+      "Patrick Vieira",
+      "Vieira"
+    ],
+    "clubs": [
+      {
+        "name": "Cannes",
+        "loan": false
+      },
+      {
+        "name": "AC Milan",
+        "loan": false
+      },
+      {
+        "name": "Arsenal",
+        "loan": false
+      },
+      {
+        "name": "Juventus",
+        "loan": false
+      },
+      {
+        "name": "Inter Milan",
+        "loan": false
+      },
+      {
+        "name": "Manchester City",
+        "loan": false
+      }
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Patrick_Vieira"
+  },
+  {
+    "name": "Bernardo Silva",
+    "answers": [
+      "Bernardo Silva",
+      "Silva"
+    ],
+    "clubs": [
+      {
+        "name": "Benfica",
+        "loan": false
+      },
+      {
+        "name": "Monaco",
+        "loan": true
+      },
+      {
+        "name": "Manchester City",
+        "loan": false
+      },
+      {
+        "name": "Real Madrid",
+        "loan": false
+      }
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Bernardo_Silva"
+  },
+  {
+    "name": "Stéphane Sessègnon",
+    "answers": [
+      "Sessègnon",
+      "Stéphane Sessègnon"
+    ],
+    "clubs": [
+      {
+        "name": "Requins de l'Atlantique",
+        "loan": false
+      },
+      {
+        "name": "Créteil",
+        "loan": false
+      },
+      {
+        "name": "Le Mans",
+        "loan": false
+      },
+      {
+        "name": "Paris Saint-Germain",
+        "loan": false
+      },
+      {
+        "name": "Sunderland",
+        "loan": false
+      },
+      {
+        "name": "West Bromwich Albion",
+        "loan": false
+      },
+      {
+        "name": "Montpellier",
+        "loan": false
+      },
+      {
+        "name": "Gençlerbirliği",
+        "loan": false
+      },
+      {
+        "name": "Göçmenköy",
+        "loan": false
+      },
+      {
+        "name": "Sirens",
+        "loan": false
+      }
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/St%C3%A9phane_Sess%C3%A8gnon"
+  },
+  {
+    "name": "Eric Cantona",
+    "answers": [
+      "Cantona",
+      "Eric Cantona"
+    ],
+    "clubs": [
+      {
+        "name": "Auxerre",
+        "loan": false
+      },
+      {
+        "name": "Martigues",
+        "loan": true
+      },
+      {
+        "name": "Marseille",
+        "loan": false
+      },
+      {
+        "name": "Bordeaux",
+        "loan": true
+      },
+      {
+        "name": "Montpellier",
+        "loan": true
+      },
+      {
+        "name": "Nîmes",
+        "loan": false
+      },
+      {
+        "name": "Leeds United",
+        "loan": true
+      },
+      {
+        "name": "Manchester United",
+        "loan": false
+      }
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Eric_Cantona"
+  },
+  {
+    "name": "Stéphane Dalmat",
+    "answers": [
+      "Dalmat",
+      "Stéphane Dalmat"
+    ],
+    "clubs": [
+      {
+        "name": "Châteauroux",
+        "loan": false
+      },
+      {
+        "name": "Lens",
+        "loan": false
+      },
+      {
+        "name": "Marseille",
+        "loan": false
+      },
+      {
+        "name": "Paris Saint-Germain",
+        "loan": false
+      },
+      {
+        "name": "Inter Milan",
+        "loan": false
+      },
+      {
+        "name": "Tottenham Hotspur",
+        "loan": true
+      },
+      {
+        "name": "Toulouse",
+        "loan": true
+      },
+      {
+        "name": "Racing Santander",
+        "loan": false
+      },
+      {
+        "name": "Bordeaux",
+        "loan": false
+      },
+      {
+        "name": "Sochaux",
+        "loan": false
+      },
+      {
+        "name": "Rennes",
+        "loan": false
+      },
+      {
+        "name": "Nîmes",
+        "loan": false
+      }
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/St%C3%A9phane_Dalmat"
   }
 ]
