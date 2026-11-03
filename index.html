@@ -58,6 +58,8 @@ ol.clubs li:last-child::after{display:none}
 ol.clubs li.loan::before{background:var(--card);box-shadow:0 0 0 2px var(--gold)}
 ol.clubs li.loan::after{background:repeating-linear-gradient(var(--gold) 0 4px,transparent 4px 8px);opacity:1}
 .tag{font-weight:400;font-size:.8rem;color:var(--muted);margin-left:6px}
+.yrs{font-weight:400;font-size:.85rem;color:var(--muted);margin-left:8px;white-space:nowrap}
+.hinttext{font-weight:600;color:var(--pitch);margin:-8px 0 14px}
 @keyframes in{to{opacity:1;transform:none}}
 form{display:flex;gap:8px}
 input{
@@ -84,6 +86,34 @@ button.ghost{background:transparent;color:var(--muted);padding:8px 4px;font-weig
 .start{width:100%;font-size:1.1rem;padding:15px}
 .msg{margin:0;color:var(--muted)}
 .hidden{display:none!important}
+.tabs{display:flex;gap:6px;margin-bottom:12px}
+.tabs button{flex:1;background:rgba(0,0,0,.3);color:var(--chalk);padding:10px 6px;font-size:.9rem}
+.tabs button:hover{background:rgba(0,0,0,.45)}
+.tabs button[aria-selected="true"]{background:var(--chalk);color:var(--ink)}
+.xi-title{margin:0 0 2px;font-size:1.35rem;font-weight:800;letter-spacing:-.01em}
+.pitch{background:linear-gradient(180deg,#1b5e36,#17502f);border:2px solid rgba(243,246,238,.55);border-radius:14px;padding:16px 6px;margin:0 0 14px;display:flex;flex-direction:column;gap:18px;color:var(--chalk)}
+.prow{display:flex;justify-content:space-around;align-items:flex-start}
+.pl{flex:1 1 0;max-width:100px;text-align:center;min-width:0}
+.pl .num{font-size:1.5rem;font-weight:800;line-height:1;display:inline-grid;place-items:center;min-width:38px;height:38px}
+.pl .nm{display:block;font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.02em;margin-top:3px;overflow-wrap:anywhere}
+.pl.miss .num{border-radius:50%;background:var(--gold);color:var(--ink);animation:pulse 1.6s ease-in-out infinite}
+.pl.miss.ok .num{background:var(--ok);animation:none}
+.pl.miss.ko .num{background:var(--ko);color:#fff;animation:none}
+.pl.miss.ok .nm,.pl.miss.ko .nm{font-weight:800}
+@keyframes pulse{50%{transform:scale(1.1)}}
+.guesses{display:flex;flex-direction:column;gap:8px}
+.guesses input{width:100%}
+.themes{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.themes button,.choices button{width:100%;text-align:left;background:#e4ebe3;color:var(--ink);font-weight:600;padding:13px 14px}
+.themes button:hover,.choices button:hover:not(:disabled){background:#d3dfd5}
+.themes small{display:block;font-weight:400;color:var(--muted);margin-top:2px}
+.qz-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;color:var(--muted);font-size:.9rem}
+.qz-q{font-size:1.25rem;font-weight:800;margin:0 0 14px;line-height:1.25}
+.choices{display:flex;flex-direction:column;gap:8px}
+.choices button:disabled{cursor:default}
+.choices button.ok{background:var(--ok);color:var(--ink)}
+.choices button.ko{background:var(--ko);color:#fff}
+.explain{color:var(--muted);font-size:.95rem;margin:0 0 14px}
 canvas{position:fixed;inset:0;pointer-events:none;z-index:10}
 @media (prefers-reduced-motion:reduce){
   *{animation-duration:.01ms!important;animation-delay:0s!important}
@@ -101,6 +131,13 @@ canvas{position:fixed;inset:0;pointer-events:none;z-index:10}
     </div>
   </header>
 
+  <nav class="tabs" role="tablist">
+    <button type="button" role="tab" aria-selected="true" data-tab="parcours">Parcours</button>
+    <button type="button" role="tab" aria-selected="false" data-tab="xi">Joueur manquant</button>
+    <button type="button" role="tab" aria-selected="false" data-tab="quiz">Quiz</button>
+  </nav>
+
+  <div id="panel-parcours">
   <section class="card" id="card">
     <p class="msg" id="intro">Je te montre les clubs d’un joueur, dans l’ordre de sa carrière. À toi de trouver qui c’est.</p>
     <p class="msg hidden" id="error"></p>
@@ -108,11 +145,12 @@ canvas{position:fixed;inset:0;pointer-events:none;z-index:10}
     <div id="game" class="hidden">
       <p class="hint" id="hint"></p>
       <ol class="clubs" id="clubs"></ol>
+      <p class="hinttext hidden" id="hinttext"></p>
       <form id="form" autocomplete="off">
         <input id="guess" type="text" placeholder="Nom du joueur" aria-label="Nom du joueur" autocapitalize="words" spellcheck="false">
         <button type="submit">Valider</button>
       </form>
-      <div class="row"><button type="button" class="ghost" id="giveup">Je ne sais pas</button></div>
+      <div class="row"><button type="button" class="ghost" id="hintbtn">Indice : nationalité (−5 pts)</button><button type="button" class="ghost" id="giveup">Je ne sais pas</button></div>
     </div>
 
     <div class="result" id="result">
@@ -122,13 +160,75 @@ canvas{position:fixed;inset:0;pointer-events:none;z-index:10}
 
     <button type="button" class="start" id="next">Commencer</button>
   </section>
+  </div>
+
+  <div id="panel-xi" class="hidden">
+    <section class="card" id="xi-card">
+      <p class="msg" id="xi-intro">Une composition, un ou deux joueurs manquants. À toi de les retrouver.</p>
+      <p class="msg hidden" id="xi-error"></p>
+      <div id="xi-game" class="hidden">
+        <h2 class="xi-title" id="xi-title"></h2>
+        <p class="hint" id="xi-sub"></p>
+        <div class="pitch" id="pitch"></div>
+        <div id="xi-actions">
+          <p class="hint" id="xi-hint"></p>
+          <form id="xi-form" autocomplete="off">
+            <div class="guesses" id="guesses"></div>
+            <button type="submit" class="start" style="margin-top:10px">Valider</button>
+          </form>
+          <div class="row"><button type="button" class="ghost" id="xi-giveup">Je ne sais pas</button></div>
+        </div>
+        <div class="result" id="xi-result">
+          <p class="verdict" id="xi-verdict"></p>
+          <p class="answer" id="xi-answer"></p>
+        </div>
+      </div>
+      <button type="button" class="start" id="xi-next">Commencer</button>
+    </section>
+  </div>
+
+  <div id="panel-quiz" class="hidden">
+    <section class="card" id="qz-card">
+      <p class="msg hidden" id="qz-error"></p>
+      <div id="qz-menu">
+        <p class="msg">Choisis un thème.</p>
+        <div class="themes" id="qz-themes"></div>
+      </div>
+      <div id="qz-play" class="hidden">
+        <div class="qz-top"><span id="qz-count"></span><button type="button" class="ghost" id="qz-quit">Changer de thème</button></div>
+        <h2 class="qz-q" id="qz-q"></h2>
+        <div class="choices" id="qz-choices"></div>
+        <div id="qz-open" class="hidden">
+          <form id="qz-form" autocomplete="off">
+            <div style="display:flex;gap:8px">
+              <input id="qz-input" type="text" placeholder="Ta réponse" aria-label="Ta réponse" spellcheck="false">
+              <button type="submit">Valider</button>
+            </div>
+          </form>
+          <div class="row"><button type="button" class="ghost" id="qz-giveup">Je ne sais pas</button></div>
+        </div>
+        <div class="result" id="qz-result">
+          <p class="verdict" id="qz-verdict"></p>
+          <p class="answer" id="qz-answer"></p>
+          <p class="explain" id="qz-explain"></p>
+          <button type="button" class="start next" id="qz-next">Question suivante</button>
+        </div>
+      </div>
+      <div class="result" id="qz-end">
+        <p class="verdict" id="qz-final"></p>
+        <p class="answer" id="qz-finaltxt"></p>
+        <button type="button" class="start next" id="qz-again">Rejouer</button>
+        <div class="row"><button type="button" class="ghost" id="qz-back">Autres thèmes</button></div>
+      </div>
+    </section>
+  </div>
 </main>
 <canvas id="fx"></canvas>
 
 <script>
 (function(){
   "use strict";
-  var players=[], deck=[], current=null, answered=false, good=0, total=0, streak=0, points=0, best=0, shown=0;
+  var players=[], deck=[], current=null, answered=false, good=0, total=0, streak=0, points=0, best=0, shown=0, hinted=false;
   try{best=parseInt(localStorage.getItem("foot-best"),10)||0}catch(e){}
   var $=function(id){return document.getElementById(id)};
   var card=$("card"), clubsEl=$("clubs"), guess=$("guess");
@@ -167,6 +267,18 @@ canvas{position:fixed;inset:0;pointer-events:none;z-index:10}
     })(t0);
   }
 
+  // Point d'entrée commun à tous les jeux : une réponse = un appel
+  function award(ok,penalty){
+    total++; var gain=0;
+    if(ok){good++;streak++;gain=Math.max(5,gainFor(streak)-(penalty||0));points+=gain}else{streak=0}
+    if(points>best){best=points;try{localStorage.setItem("foot-best",String(best))}catch(e){}}
+    renderSub(good+"/"+total+(streak>1?" · série de "+streak:""));
+    countTo(points);
+    if(gain){var g=$("gain");g.textContent="+"+gain;g.classList.remove("go");void g.offsetWidth;g.classList.add("go")}
+    return gain;
+  }
+  window.Foot={isCorrect:isCorrect,confetti:confetti,award:award,norm:norm};
+
   // --- Tirage sans répétition -------------------------------------------
   function refill(){
     deck=players.map(function(_,i){return i});
@@ -198,6 +310,11 @@ canvas{position:fixed;inset:0;pointer-events:none;z-index:10}
   }
 
   // --- Affichage ---------------------------------------------------------
+  function fmtYears(c){
+    if(!c.from) return "";
+    if(c.to===null||c.to===undefined) return c.from+"–";
+    return c.from===c.to?String(c.from):c.from+"–"+c.to;
+  }
   function show(p){
     current=p; answered=false;
     card.className="card";
@@ -212,22 +329,25 @@ canvas{position:fixed;inset:0;pointer-events:none;z-index:10}
       li.style.animationDelay=(i*90)+"ms";
       if(c.loan) li.className="loan";
       li.appendChild(document.createTextNode(c.name));
+      var yr=fmtYears(c);
+      if(yr){var y=document.createElement("span");y.className="yrs";y.textContent=yr;li.appendChild(y)}
       if(c.loan){var t=document.createElement("span");t.className="tag";t.textContent="prêt";li.appendChild(t)}
       clubsEl.appendChild(li);
     });
+    hinted=false; $("hinttext").classList.add("hidden");
+    var hb=$("hintbtn"); hb.classList.toggle("hidden",!p.nationality); hb.disabled=false;
     guess.value=""; guess.disabled=false; guess.focus({preventScroll:true});
   }
 
   function finish(ok,gaveUp){
     if(answered||!current) return;
-    answered=true; total++;
-    var gain=0;
-    if(ok){good++;streak++;gain=gainFor(streak);points+=gain}else{streak=0}
+    answered=true;
+    var gain=award(ok,hinted?5:0);
     card.className="card "+(ok?"good":"bad");
     $("game").classList.add("hidden");
     var v=$("verdict");
     v.className="verdict "+(ok?"ok":"ko");
-    v.textContent=ok?"Bien joué ! +"+gain+" pts":(gaveUp?"Pas de souci.":"Raté !");
+    v.textContent=ok?"Bien joué ! +"+gain+" pts"+(hinted?" (indice −5)":""):(gaveUp?"Pas de souci.":"Raté !");
     var a=$("answer"); a.textContent="C’était ";
     var strong=document.createElement("strong"); strong.textContent=current.name; a.appendChild(strong);
     if(current.wiki){
@@ -237,10 +357,6 @@ canvas{position:fixed;inset:0;pointer-events:none;z-index:10}
     }
     $("result").classList.add("show");
     var nx=$("next"); nx.textContent="Joueur suivant"; nx.className="start next"; nx.focus({preventScroll:true});
-    if(points>best){best=points;try{localStorage.setItem("foot-best",String(best))}catch(e){}}
-    renderSub(good+"/"+total+(streak>1?" · série de "+streak:""));
-    countTo(points);
-    if(gain){var g=$("gain");g.textContent="+"+gain;g.classList.remove("go");void g.offsetWidth;g.classList.add("go")}
     if(ok) confetti();
   }
 
@@ -250,6 +366,12 @@ canvas{position:fixed;inset:0;pointer-events:none;z-index:10}
     finish(isCorrect(guess.value,current.answers||[current.name]),false);
   });
   $("giveup").addEventListener("click",function(){finish(false,true)});
+  $("hintbtn").addEventListener("click",function(){
+    if(answered||!current||!current.nationality) return;
+    hinted=true; this.classList.add("hidden");
+    var h=$("hinttext"); h.textContent="Nationalité : "+current.nationality; h.classList.remove("hidden");
+    guess.focus({preventScroll:true});
+  });
   $("next").addEventListener("click",function(){
     if(!players.length) return;
     show(draw());
@@ -278,6 +400,249 @@ canvas{position:fixed;inset:0;pointer-events:none;z-index:10}
       if(k<1800) requestAnimationFrame(tick); else ctx.clearRect(0,0,cv.width,cv.height);
     })(t0);
   }
+})();
+</script>
+
+<script>
+(function(){
+  "use strict";
+  var F=window.Foot, $=function(id){return document.getElementById(id)};
+  var data=[], deck=[], cur=null, slots=[], done=false, loaded=false;
+
+  // --- Onglets
+  var tabs=document.querySelectorAll(".tabs button");
+  Array.prototype.forEach.call(tabs,function(b){
+    b.addEventListener("click",function(){
+      Array.prototype.forEach.call(tabs,function(x){
+        var on=x===b; x.setAttribute("aria-selected",on?"true":"false");
+        $("panel-"+x.getAttribute("data-tab")).classList.toggle("hidden",!on);
+      });
+      if(b.getAttribute("data-tab")==="xi"&&!loaded) load();
+    });
+  });
+
+  // --- Données
+  function load(){
+    loaded=true;
+    fetch("lineups.json").then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){
+      data=d.filter(function(m){return m.rows&&m.rows.length});
+      if(!data.length) throw 0;
+    }).catch(function(){
+      $("xi-intro").classList.add("hidden"); $("xi-next").classList.add("hidden");
+      var e=$("xi-error"); e.classList.remove("hidden");
+      e.textContent="Impossible de charger lineups.json. Vérifie qu’il est dans le même dossier que index.html.";
+    });
+  }
+
+  function draw(){
+    if(!deck.length){
+      deck=data.map(function(_,i){return i});
+      for(var i=deck.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=deck[i];deck[i]=deck[j];deck[j]=t}
+    }
+    return data[deck.pop()];
+  }
+  function answersOf(p){
+    var a=(p.answers&&p.answers.length)?p.answers.slice():[p.name];
+    var parts=p.name.split(" "); if(parts.length>1) a.push(parts[parts.length-1]);
+    return a;
+  }
+
+  // --- Affichage
+  function render(m){
+    cur=m; done=false; slots=[];
+    $("xi-intro").classList.add("hidden");
+    $("xi-game").classList.remove("hidden");
+    $("xi-next").classList.add("hidden");
+    $("xi-result").classList.remove("show");
+    $("xi-actions").classList.remove("hidden");
+    $("xi-card").className="card";
+    $("xi-title").textContent=m.title;
+    $("xi-sub").textContent=m.subtitle||"";
+    var pitch=$("pitch"); pitch.innerHTML="";
+    m.rows.forEach(function(row){
+      var r=document.createElement("div"); r.className="prow";
+      row.forEach(function(p){
+        var d=document.createElement("div"); d.className="pl"+(p.missing?" miss":"");
+        var n=document.createElement("span"); n.className="num"; n.textContent=p.missing?"?":(p.n!=null?p.n:"");
+        var nm=document.createElement("span"); nm.className="nm"; nm.textContent=p.missing?"":p.name;
+        d.appendChild(n); d.appendChild(nm); r.appendChild(d);
+        if(p.missing) slots.push({p:p,el:d,num:n,nm:nm,found:false});
+      });
+      pitch.appendChild(r);
+    });
+    var g=$("guesses"); g.innerHTML="";
+    slots.forEach(function(s,i){
+      var inp=document.createElement("input"); inp.type="text"; inp.autocomplete="off"; inp.spellcheck=false;
+      inp.placeholder=slots.length===1?"Nom du joueur manquant":"Joueur manquant "+(i+1);
+      inp.setAttribute("aria-label",inp.placeholder); g.appendChild(inp);
+    });
+    $("xi-hint").textContent=slots.length===1?"Un joueur manquant.":slots.length+" joueurs manquants, dans n’importe quel ordre.";
+    g.firstChild.focus({preventScroll:true});
+  }
+
+  function finish(gaveUp){
+    if(done) return; done=true;
+    var inputs=$("guesses").querySelectorAll("input"), used=[];
+    if(!gaveUp){
+      Array.prototype.forEach.call(inputs,function(inp){
+        var v=inp.value.trim(); if(!v) return;
+        for(var j=0;j<slots.length;j++){
+          if(!used[j]&&F.isCorrect(v,answersOf(slots[j].p))){used[j]=true;slots[j].found=true;break}
+        }
+      });
+    }
+    var found=0, gain=0;
+    slots.forEach(function(s){
+      s.el.classList.add(s.found?"ok":"ko");
+      s.num.textContent=s.p.n!=null?s.p.n:"";
+      s.nm.textContent=s.p.name;
+      if(s.found) found++;
+    });
+    slots.forEach(function(s){ if(s.found) gain+=F.award(true) });
+    slots.forEach(function(s){ if(!s.found) F.award(false) });
+    var all=found===slots.length;
+    $("xi-card").className="card "+(all?"good":"bad");
+    var v=$("xi-verdict"); v.className="verdict "+(all?"ok":"ko");
+    v.textContent=all?"Bien joué ! +"+gain+" pts":(found?"Presque ! +"+gain+" pts":(gaveUp?"Pas de souci.":"Raté !"));
+    $("xi-answer").textContent="";
+    $("xi-actions").classList.add("hidden");
+    $("xi-result").classList.add("show");
+    var nx=$("xi-next"); nx.textContent="Match suivant"; nx.classList.remove("hidden"); nx.focus({preventScroll:true});
+    if(found) F.confetti();
+  }
+
+  $("xi-form").addEventListener("submit",function(e){
+    e.preventDefault();
+    var any=false; Array.prototype.forEach.call($("guesses").querySelectorAll("input"),function(i){if(i.value.trim())any=true});
+    if(any) finish(false);
+  });
+  $("xi-giveup").addEventListener("click",function(){finish(true)});
+  $("xi-next").addEventListener("click",function(){ if(data.length) render(draw()) });
+})();
+</script>
+
+<script>
+(function(){
+  "use strict";
+  var F=window.Foot, $=function(id){return document.getElementById(id)};
+  var quizzes=[], loaded=false, cur=null, qs=[], idx=0, ok=0, answered=false, curQ=null, correctText="";
+
+  function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
+  function show(id,on){$(id).classList.toggle("hidden",!on)}
+
+  // Chargement au premier clic sur l'onglet
+  document.querySelector('.tabs button[data-tab="quiz"]').addEventListener("click",function(){
+    if(loaded) return; loaded=true;
+    fetch("quiz.json").then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){
+      quizzes=d.filter(function(q){return q.questions&&q.questions.length});
+      if(!quizzes.length) throw 0;
+      menu();
+    }).catch(function(){
+      show("qz-menu",false);
+      var e=$("qz-error"); e.classList.remove("hidden");
+      e.textContent="Impossible de charger quiz.json. Vérifie qu’il est dans le même dossier que index.html.";
+    });
+  });
+
+  function menu(){
+    show("qz-menu",true); show("qz-play",false); show("qz-end",false);
+    $("qz-card").className="card";
+    var box=$("qz-themes"); box.innerHTML="";
+    function add(label,sub,fn){
+      var b=document.createElement("button"); b.type="button"; b.appendChild(document.createTextNode(label));
+      var sm=document.createElement("small"); sm.textContent=sub; b.appendChild(sm);
+      b.addEventListener("click",fn); box.appendChild(b);
+    }
+    quizzes.forEach(function(q){ add(q.theme,q.questions.length+" questions",function(){start(q)}) });
+    if(quizzes.length>1){
+      add("Mélange","10 questions tirées de tous les thèmes",function(){
+        var all=[]; quizzes.forEach(function(q){all=all.concat(q.questions)});
+        start({theme:"Mélange",questions:shuffle(all).slice(0,10),mix:true});
+      });
+    }
+  }
+
+  function start(q){
+    cur=q; qs=q.shuffle?shuffle(q.questions):q.questions.slice(); idx=0; ok=0;
+    show("qz-menu",false); show("qz-end",false); show("qz-play",true);
+    next();
+  }
+
+  function next(){
+    if(idx>=qs.length) return end();
+    curQ=qs[idx]; answered=false;
+    $("qz-card").className="card";
+    show("qz-result",false);
+    $("qz-count").textContent=cur.theme+" · question "+(idx+1)+"/"+qs.length;
+    $("qz-q").textContent=curQ.q;
+    var qcm=(curQ.type?curQ.type==="qcm":!!curQ.choices);
+    var ch=$("qz-choices"); ch.innerHTML="";
+    show("qz-choices",qcm); show("qz-open",!qcm);
+    if(qcm){
+      var ans=typeof curQ.answer==="number"?curQ.choices[curQ.answer]:curQ.answer;
+      correctText=ans;
+      (curQ.keepOrder?curQ.choices:shuffle(curQ.choices)).forEach(function(c){
+        var b=document.createElement("button"); b.type="button"; b.textContent=c;
+        b.addEventListener("click",function(){resolve(c===ans,c)});
+        ch.appendChild(b);
+      });
+    }else{
+      var list=curQ.answers||[curQ.answer]; correctText=list[0];
+      $("qz-input").value=""; $("qz-input").focus({preventScroll:true});
+    }
+  }
+
+  function matchOpen(input){
+    var n=F.norm(input); if(!n) return false;
+    return (curQ.answers||[curQ.answer]).some(function(a){
+      var na=F.norm(String(a)); if(!na) return false;
+      if(n===na) return true;
+      if(/^\d+$/.test(na)) return false;       // les nombres doivent être exacts
+      return F.isCorrect(input,[a]);
+    });
+  }
+
+  function resolve(good,given){
+    if(answered) return; answered=true;
+    var gain=F.award(good); if(good) ok++;
+    $("qz-card").className="card "+(good?"good":"bad");
+    Array.prototype.forEach.call($("qz-choices").children,function(b){
+      b.disabled=true;
+      if(b.textContent===correctText) b.classList.add("ok");
+      else if(b.textContent===given) b.classList.add("ko");
+    });
+    show("qz-open",false);
+    var v=$("qz-verdict"); v.className="verdict "+(good?"ok":"ko");
+    v.textContent=good?"Bonne réponse ! +"+gain+" pts":(given===null?"Pas de souci.":"Raté !");
+    $("qz-answer").textContent=good?"":"La réponse : "+correctText;
+    $("qz-explain").textContent=curQ.explain||""; show("qz-explain",!!curQ.explain);
+    var nx=$("qz-next"); nx.textContent=idx+1>=qs.length?"Voir mon score":"Question suivante";
+    show("qz-result",true); nx.focus({preventScroll:true});
+    if(good) F.confetti();
+  }
+
+  function end(){
+    show("qz-play",false); show("qz-end",true);
+    $("qz-card").className="card";
+    var r=ok/qs.length;
+    $("qz-final").className="verdict "+(r>=.5?"ok":"ko");
+    $("qz-final").textContent=ok+"/"+qs.length;
+    $("qz-finaltxt").textContent=r===1?"Sans faute, bravo !":(r>=.7?"Très beau score !":(r>=.4?"Pas mal, tu peux faire mieux.":"Courage, la revanche est juste en dessous."));
+    if(r===1) F.confetti();
+  }
+
+  $("qz-form").addEventListener("submit",function(e){
+    e.preventDefault(); var v=$("qz-input").value;
+    if(v.trim()) resolve(matchOpen(v),v);
+  });
+  $("qz-giveup").addEventListener("click",function(){resolve(false,null)});
+  $("qz-next").addEventListener("click",function(){idx++;next()});
+  $("qz-quit").addEventListener("click",menu);
+  $("qz-back").addEventListener("click",menu);
+  $("qz-again").addEventListener("click",function(){
+    if(cur.mix){var all=[];quizzes.forEach(function(q){all=all.concat(q.questions)});cur.questions=shuffle(all).slice(0,10)}
+    start(cur);
+  });
 })();
 </script>
 </body>
