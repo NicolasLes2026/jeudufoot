@@ -5,26 +5,39 @@
       "Isabey",
       "Michaël Isabey"
     ],
+    "nationality": "",
+    "position": "Milieu",
+    "position_raw": "Midfielder",
     "clubs": [
       {
         "name": "Racing Besançon",
-        "loan": false
+        "loan": false,
+        "from": 1993,
+        "to": 1997
       },
       {
         "name": "Sochaux",
-        "loan": false
+        "loan": false,
+        "from": 1997,
+        "to": 2009
       },
       {
         "name": "Racing Besançon",
-        "loan": true
+        "loan": true,
+        "from": 1999,
+        "to": 2000
       },
       {
         "name": "Dijon",
-        "loan": false
+        "loan": false,
+        "from": 2009,
+        "to": 2011
       },
       {
         "name": "Racing Besançon",
-        "loan": false
+        "loan": false,
+        "from": 2012,
+        "to": 2013
       }
     ],
     "wiki": "https://en.wikipedia.org/wiki/Micha%C3%ABl_Isabey"
@@ -35,30 +48,45 @@
       "Bourillon",
       "Grégory Bourillon"
     ],
+    "nationality": "",
+    "position": "Défenseur",
+    "position_raw": "Centre-back",
     "clubs": [
       {
         "name": "Rennes",
-        "loan": false
+        "loan": false,
+        "from": 2002,
+        "to": 2007
       },
       {
         "name": "Paris Saint-Germain",
-        "loan": false
+        "loan": false,
+        "from": 2007,
+        "to": 2010
       },
       {
         "name": "Lorient",
-        "loan": false
+        "loan": false,
+        "from": 2010,
+        "to": 2013
       },
       {
         "name": "Reims",
-        "loan": false
+        "loan": false,
+        "from": 2014,
+        "to": 2015
       },
       {
         "name": "Angers",
-        "loan": false
+        "loan": false,
+        "from": 2016,
+        "to": 2017
       },
       {
         "name": "Châteauroux",
-        "loan": false
+        "loan": false,
+        "from": 2017,
+        "to": 2019
       }
     ],
     "wiki": "https://en.wikipedia.org/wiki/Gr%C3%A9gory_Bourillon"
@@ -69,58 +97,87 @@
       "Matt Moussilou",
       "Moussilou"
     ],
+    "nationality": "",
+    "position": "Attaquant",
+    "position_raw": "Striker",
     "clubs": [
       {
         "name": "Lille",
-        "loan": false
+        "loan": false,
+        "from": 1999,
+        "to": 2006
       },
       {
         "name": "Nice",
-        "loan": false
+        "loan": false,
+        "from": 2006,
+        "to": 2009
       },
       {
         "name": "Saint-Étienne",
-        "loan": true
+        "loan": true,
+        "from": 2007,
+        "to": 2007
       },
       {
         "name": "Marseille",
-        "loan": true
+        "loan": true,
+        "from": 2007,
+        "to": 2007
       },
       {
         "name": "Al-Arabi",
-        "loan": true
+        "loan": true,
+        "from": 2008,
+        "to": 2008
       },
       {
         "name": "Nice",
-        "loan": false
+        "loan": false,
+        "from": 2008,
+        "to": 2009
       },
       {
         "name": "Boulogne",
-        "loan": false
+        "loan": false,
+        "from": 2009,
+        "to": 2010
       },
       {
         "name": "Lausanne-Sport",
-        "loan": false
+        "loan": false,
+        "from": 2011,
+        "to": 2013
       },
       {
         "name": "Club Africain",
-        "loan": false
+        "loan": false,
+        "from": 2013,
+        "to": 2014
       },
       {
         "name": "Amiens",
-        "loan": false
+        "loan": false,
+        "from": 2014,
+        "to": 2015
       },
       {
         "name": "Le Mont",
-        "loan": false
+        "loan": false,
+        "from": 2015,
+        "to": 2016
       },
       {
         "name": "Yverdon-Sport",
-        "loan": false
+        "loan": false,
+        "from": 2016,
+        "to": 2017
       },
       {
         "name": "Meyrin",
-        "loan": false
+        "loan": false,
+        "from": 2017,
+        "to": 2021
       }
     ],
     "wiki": "https://en.wikipedia.org/wiki/Matt_Moussilou"
@@ -131,42 +188,63 @@
       "Barbosa",
       "Cédric Barbosa"
     ],
+    "nationality": "",
+    "position": "Milieu",
+    "position_raw": "Midfielder",
     "clubs": [
       {
         "name": "Alès",
-        "loan": false
+        "loan": false,
+        "from": 1994,
+        "to": 1997
       },
       {
         "name": "Montpellier",
-        "loan": false
+        "loan": false,
+        "from": 1997,
+        "to": 2003
       },
       {
         "name": "Stade Rennais",
-        "loan": false
+        "loan": false,
+        "from": 2003,
+        "to": 2006
       },
       {
         "name": "Troyes",
-        "loan": false
+        "loan": false,
+        "from": 2006,
+        "to": 2006
       },
       {
         "name": "Metz",
-        "loan": false
+        "loan": false,
+        "from": 2007,
+        "to": 2009
       },
       {
         "name": "Evian",
-        "loan": false
+        "loan": false,
+        "from": 2009,
+        "to": 2016
       },
       {
         "name": "Annecy",
-        "loan": false
+        "loan": false,
+        "from": 2016,
+        "to": 2018
       },
       {
         "name": "Olympique Alès",
-        "loan": false
+        "loan": false,
+        "from": 2018,
+        "to": 2019
       },
       {
         "name": "AS Saint-Privat",
-        "loan": false
+        "loan": false,
+        "from": 2019,
+        "to": null
       }
     ],
     "wiki": "https://en.wikipedia.org/wiki/C%C3%A9dric_Barbosa"
@@ -177,38 +255,57 @@
       "Batlles",
       "Laurent Batlles"
     ],
+    "nationality": "",
+    "position": "Milieu",
+    "position_raw": "Midfielder",
     "clubs": [
       {
         "name": "Toulouse",
-        "loan": false
+        "loan": false,
+        "from": 1994,
+        "to": 1999
       },
       {
         "name": "Bordeaux",
-        "loan": false
+        "loan": false,
+        "from": 1999,
+        "to": 2001
       },
       {
         "name": "Rennes",
-        "loan": false
+        "loan": false,
+        "from": 2002,
+        "to": 2002
       },
       {
         "name": "Bastia",
-        "loan": false
+        "loan": false,
+        "from": 2003,
+        "to": 2003
       },
       {
         "name": "Marseille",
-        "loan": false
+        "loan": false,
+        "from": 2004,
+        "to": 2005
       },
       {
         "name": "Toulouse",
-        "loan": false
+        "loan": false,
+        "from": 2005,
+        "to": 2008
       },
       {
         "name": "Grenoble",
-        "loan": false
+        "loan": false,
+        "from": 2008,
+        "to": 2010
       },
       {
         "name": "Saint-Étienne",
-        "loan": false
+        "loan": false,
+        "from": 2010,
+        "to": 2012
       }
     ],
     "wiki": "https://en.wikipedia.org/wiki/Laurent_Batlles"
@@ -219,38 +316,57 @@
       "Cissé",
       "Édouard Cissé"
     ],
+    "nationality": "",
+    "position": "Milieu",
+    "position_raw": "Midfielder",
     "clubs": [
       {
         "name": "Pau FC",
-        "loan": false
+        "loan": false,
+        "from": 1996,
+        "to": 1997
       },
       {
         "name": "Paris Saint-Germain",
-        "loan": false
+        "loan": false,
+        "from": 1997,
+        "to": 2007
       },
       {
         "name": "Rennes",
-        "loan": true
+        "loan": true,
+        "from": 1998,
+        "to": 1999
       },
       {
         "name": "West Ham United",
-        "loan": true
+        "loan": true,
+        "from": 2002,
+        "to": 2003
       },
       {
         "name": "Monaco",
-        "loan": true
+        "loan": true,
+        "from": 2003,
+        "to": 2004
       },
       {
         "name": "Beşiktaş",
-        "loan": false
+        "loan": false,
+        "from": 2007,
+        "to": 2009
       },
       {
         "name": "Marseille",
-        "loan": false
+        "loan": false,
+        "from": 2009,
+        "to": 2011
       },
       {
         "name": "Auxerre",
-        "loan": false
+        "loan": false,
+        "from": 2011,
+        "to": 2012
       }
     ],
     "wiki": "https://en.wikipedia.org/wiki/%C3%89douard_Ciss%C3%A9"
@@ -261,50 +377,75 @@
       "Darcheville",
       "Jean-Claude Darcheville"
     ],
+    "nationality": "",
+    "position": "Attaquant",
+    "position_raw": "Striker",
     "clubs": [
       {
         "name": "Sinnamary",
-        "loan": false
+        "loan": false,
+        "from": 1994,
+        "to": 1995
       },
       {
         "name": "Rennes",
-        "loan": false
+        "loan": false,
+        "from": 1995,
+        "to": 1999
       },
       {
         "name": "Nottingham Forest",
-        "loan": true
+        "loan": true,
+        "from": 1998,
+        "to": 1999
       },
       {
         "name": "Lorient",
-        "loan": false
+        "loan": false,
+        "from": 1999,
+        "to": 2002
       },
       {
         "name": "Bordeaux",
-        "loan": false
+        "loan": false,
+        "from": 2002,
+        "to": 2007
       },
       {
         "name": "Rangers",
-        "loan": false
+        "loan": false,
+        "from": 2007,
+        "to": 2009
       },
       {
         "name": "Valenciennes",
-        "loan": false
+        "loan": false,
+        "from": 2009,
+        "to": 2009
       },
       {
         "name": "Nantes",
-        "loan": false
+        "loan": false,
+        "from": 2009,
+        "to": 2010
       },
       {
         "name": "Kavala",
-        "loan": false
+        "loan": false,
+        "from": 2010,
+        "to": 2011
       },
       {
         "name": "Sinnamary",
-        "loan": false
+        "loan": false,
+        "from": 2011,
+        "to": 2013
       },
       {
         "name": "Saint-Georges",
-        "loan": false
+        "loan": false,
+        "from": 2013,
+        "to": 2014
       }
     ],
     "wiki": "https://en.wikipedia.org/wiki/Jean-Claude_Darcheville"
@@ -315,34 +456,51 @@
       "Jean Makoun",
       "Makoun"
     ],
+    "nationality": "",
+    "position": "Milieu",
+    "position_raw": "Midfielder",
     "clubs": [
       {
         "name": "Lille",
-        "loan": false
+        "loan": false,
+        "from": 2001,
+        "to": 2008
       },
       {
         "name": "Lyon",
-        "loan": false
+        "loan": false,
+        "from": 2008,
+        "to": 2011
       },
       {
         "name": "Aston Villa",
-        "loan": false
+        "loan": false,
+        "from": 2011,
+        "to": 2013
       },
       {
         "name": "Olympiacos",
-        "loan": true
+        "loan": true,
+        "from": 2011,
+        "to": 2012
       },
       {
         "name": "Stade Rennais",
-        "loan": true
+        "loan": true,
+        "from": 2012,
+        "to": 2015
       },
       {
         "name": "Antalyaspor",
-        "loan": false
+        "loan": false,
+        "from": 2015,
+        "to": 2017
       },
       {
         "name": "Merit Alsancak Yesilova SK",
-        "loan": false
+        "loan": false,
+        "from": 2018,
+        "to": 2020
       }
     ],
     "wiki": "https://en.wikipedia.org/wiki/Jean_Makoun"
@@ -353,18 +511,27 @@
       "Congré",
       "Daniel Congré"
     ],
+    "nationality": "",
+    "position": "Défenseur",
+    "position_raw": "Defender",
     "clubs": [
       {
         "name": "Toulouse",
-        "loan": false
+        "loan": false,
+        "from": 2004,
+        "to": 2012
       },
       {
         "name": "Montpellier",
-        "loan": false
+        "loan": false,
+        "from": 2012,
+        "to": 2021
       },
       {
         "name": "Dijon",
-        "loan": false
+        "loan": false,
+        "from": 2021,
+        "to": 2024
       }
     ],
     "wiki": "https://en.wikipedia.org/wiki/Daniel_Congr%C3%A9"
@@ -375,42 +542,63 @@
       "Camara",
       "Zoumana Camara"
     ],
+    "nationality": "",
+    "position": "Défenseur",
+    "position_raw": "Centre-back",
     "clubs": [
       {
         "name": "Saint-Étienne",
-        "loan": false
+        "loan": false,
+        "from": 1996,
+        "to": 1998
       },
       {
         "name": "Inter Milan",
-        "loan": false
+        "loan": false,
+        "from": 1998,
+        "to": 2000
       },
       {
         "name": "Empoli",
-        "loan": true
+        "loan": true,
+        "from": 1999,
+        "to": 1999
       },
       {
         "name": "Bastia",
-        "loan": true
+        "loan": true,
+        "from": 1999,
+        "to": 2000
       },
       {
         "name": "Marseille",
-        "loan": false
+        "loan": false,
+        "from": 2000,
+        "to": 2001
       },
       {
         "name": "Lens",
-        "loan": false
+        "loan": false,
+        "from": 2002,
+        "to": 2004
       },
       {
         "name": "Leeds United",
-        "loan": true
+        "loan": true,
+        "from": 2003,
+        "to": 2004
       },
       {
         "name": "Saint-Étienne",
-        "loan": false
+        "loan": false,
+        "from": 2004,
+        "to": 2007
       },
       {
         "name": "Paris Saint-Germain",
-        "loan": false
+        "loan": false,
+        "from": 2007,
+        "to": 2015
       }
     ],
     "wiki": "https://en.wikipedia.org/wiki/Zoumana_Camara"
@@ -421,42 +609,63 @@
       "Boudebouz",
       "Ryad Boudebouz"
     ],
+    "nationality": "",
+    "position": "Milieu",
+    "position_raw": "Attacking midfielder",
     "clubs": [
       {
         "name": "Sochaux",
-        "loan": false
+        "loan": false,
+        "from": 2008,
+        "to": 2012
       },
       {
         "name": "Bastia",
-        "loan": false
+        "loan": false,
+        "from": 2013,
+        "to": 2015
       },
       {
         "name": "Montpellier",
-        "loan": false
+        "loan": false,
+        "from": 2015,
+        "to": 2017
       },
       {
         "name": "Real Betis",
-        "loan": false
+        "loan": false,
+        "from": 2017,
+        "to": 2019
       },
       {
         "name": "Celta",
-        "loan": true
+        "loan": true,
+        "from": 2019,
+        "to": 2019
       },
       {
         "name": "Saint-Étienne",
-        "loan": false
+        "loan": false,
+        "from": 2019,
+        "to": 2021
       },
       {
         "name": "Al-Ahli",
-        "loan": false
+        "loan": false,
+        "from": 2022,
+        "to": 2023
       },
       {
         "name": "Ohod",
-        "loan": false
+        "loan": false,
+        "from": 2023,
+        "to": 2024
       },
       {
         "name": "JS Kabylie",
-        "loan": false
+        "loan": false,
+        "from": 2024,
+        "to": 2026
       }
     ],
     "wiki": "https://en.wikipedia.org/wiki/Ryad_Boudebouz"
@@ -467,46 +676,69 @@
       "Maoulida",
       "Toifilou Maoulida"
     ],
+    "nationality": "",
+    "position": "Attaquant",
+    "position_raw": "Striker, Winger",
     "clubs": [
       {
         "name": "Montpellier",
-        "loan": false
+        "loan": false,
+        "from": 1997,
+        "to": 2001
       },
       {
         "name": "Rennes",
-        "loan": false
+        "loan": false,
+        "from": 2002,
+        "to": 2005
       },
       {
         "name": "Metz",
-        "loan": true
+        "loan": true,
+        "from": 2003,
+        "to": 2004
       },
       {
         "name": "Monaco",
-        "loan": false
+        "loan": false,
+        "from": 2005,
+        "to": 2006
       },
       {
         "name": "Marseille",
-        "loan": true
+        "loan": true,
+        "from": 2006,
+        "to": 2007
       },
       {
         "name": "Auxerre",
-        "loan": false
+        "loan": false,
+        "from": 2007,
+        "to": 2007
       },
       {
         "name": "Lens",
-        "loan": false
+        "loan": false,
+        "from": 2008,
+        "to": 2011
       },
       {
         "name": "Bastia",
-        "loan": false
+        "loan": false,
+        "from": 2011,
+        "to": 2014
       },
       {
         "name": "Nîmes",
-        "loan": false
+        "loan": false,
+        "from": 2014,
+        "to": 2016
       },
       {
         "name": "Tours",
-        "loan": false
+        "loan": false,
+        "from": 2016,
+        "to": 2017
       }
     ],
     "wiki": "https://en.wikipedia.org/wiki/Toifilou_Maoulida"
@@ -517,38 +749,57 @@
       "Bodmer",
       "Mathieu Bodmer"
     ],
+    "nationality": "",
+    "position": "Milieu",
+    "position_raw": "Midfielder",
     "clubs": [
       {
         "name": "Caen",
-        "loan": false
+        "loan": false,
+        "from": 2000,
+        "to": 2003
       },
       {
         "name": "Lille",
-        "loan": false
+        "loan": false,
+        "from": 2003,
+        "to": 2007
       },
       {
         "name": "Lyon",
-        "loan": false
+        "loan": false,
+        "from": 2007,
+        "to": 2010
       },
       {
         "name": "Paris Saint-Germain",
-        "loan": false
+        "loan": false,
+        "from": 2010,
+        "to": 2013
       },
       {
         "name": "Saint-Étienne",
-        "loan": true
+        "loan": true,
+        "from": 2013,
+        "to": 2013
       },
       {
         "name": "Nice",
-        "loan": false
+        "loan": false,
+        "from": 2013,
+        "to": 2017
       },
       {
         "name": "Guingamp",
-        "loan": false
+        "loan": false,
+        "from": 2017,
+        "to": 2017
       },
       {
         "name": "Amiens",
-        "loan": false
+        "loan": false,
+        "from": 2017,
+        "to": 2020
       }
     ],
     "wiki": "https://en.wikipedia.org/wiki/Mathieu_Bodmer"
@@ -559,30 +810,45 @@
       "Clément",
       "Jérémy Clément"
     ],
+    "nationality": "",
+    "position": "Milieu",
+    "position_raw": "Midfielder",
     "clubs": [
       {
         "name": "Lyon",
-        "loan": false
+        "loan": false,
+        "from": 2003,
+        "to": 2006
       },
       {
         "name": "Rangers",
-        "loan": false
+        "loan": false,
+        "from": 2006,
+        "to": 2007
       },
       {
         "name": "Paris Saint-Germain",
-        "loan": false
+        "loan": false,
+        "from": 2007,
+        "to": 2011
       },
       {
         "name": "Saint-Étienne",
-        "loan": false
+        "loan": false,
+        "from": 2011,
+        "to": 2017
       },
       {
         "name": "Nancy",
-        "loan": false
+        "loan": false,
+        "from": 2017,
+        "to": 2019
       },
       {
         "name": "Bourgoin-Jallieu",
-        "loan": false
+        "loan": false,
+        "from": 2019,
+        "to": 2020
       }
     ],
     "wiki": "https://en.wikipedia.org/wiki/J%C3%A9r%C3%A9my_Cl%C3%A9ment"
@@ -593,62 +859,93 @@
       "Loïc Rémy",
       "Rémy"
     ],
+    "nationality": "",
+    "position": "Attaquant",
+    "position_raw": "Forward",
     "clubs": [
       {
         "name": "Lyon",
-        "loan": false
+        "loan": false,
+        "from": 2006,
+        "to": 2008
       },
       {
         "name": "Lens",
-        "loan": true
+        "loan": true,
+        "from": 2008,
+        "to": 2008
       },
       {
         "name": "Nice",
-        "loan": false
+        "loan": false,
+        "from": 2008,
+        "to": 2010
       },
       {
         "name": "Marseille",
-        "loan": false
+        "loan": false,
+        "from": 2010,
+        "to": 2013
       },
       {
         "name": "Queens Park Rangers",
-        "loan": false
+        "loan": false,
+        "from": 2013,
+        "to": 2014
       },
       {
         "name": "Newcastle United",
-        "loan": true
+        "loan": true,
+        "from": 2013,
+        "to": 2014
       },
       {
         "name": "Chelsea",
-        "loan": false
+        "loan": false,
+        "from": 2014,
+        "to": 2017
       },
       {
         "name": "Crystal Palace",
-        "loan": true
+        "loan": true,
+        "from": 2016,
+        "to": 2017
       },
       {
         "name": "Las Palmas",
-        "loan": false
+        "loan": false,
+        "from": 2017,
+        "to": 2018
       },
       {
         "name": "Getafe",
-        "loan": true
+        "loan": true,
+        "from": 2018,
+        "to": 2018
       },
       {
         "name": "Lille",
-        "loan": false
+        "loan": false,
+        "from": 2018,
+        "to": 2020
       },
       {
         "name": "Çaykur Rizespor",
-        "loan": false
+        "loan": false,
+        "from": 2020,
+        "to": 2022
       },
       {
         "name": "Adana Demirspor",
-        "loan": false
+        "loan": false,
+        "from": 2022,
+        "to": 2022
       },
       {
         "name": "Brest",
-        "loan": false
+        "loan": false,
+        "from": 2023,
+        "to": 2023
       }
     ],
     "wiki": "https://en.wikipedia.org/wiki/Lo%C3%AFc_R%C3%A9my"
@@ -659,26 +956,39 @@
       "Vladimír Šmicer",
       "Šmicer"
     ],
+    "nationality": "",
+    "position": "Milieu",
+    "position_raw": "Attacking midfielder",
     "clubs": [
       {
         "name": "Slavia Prague",
-        "loan": false
+        "loan": false,
+        "from": 1992,
+        "to": 1996
       },
       {
         "name": "Lens",
-        "loan": false
+        "loan": false,
+        "from": 1996,
+        "to": 1999
       },
       {
         "name": "Liverpool",
-        "loan": false
+        "loan": false,
+        "from": 1999,
+        "to": 2005
       },
       {
         "name": "Bordeaux",
-        "loan": false
+        "loan": false,
+        "from": 2005,
+        "to": 2007
       },
       {
         "name": "Slavia Prague",
-        "loan": false
+        "loan": false,
+        "from": 2007,
+        "to": 2009
       }
     ],
     "wiki": "https://en.wikipedia.org/wiki/Vladim%C3%ADr_%C5%A0micer"
@@ -689,42 +999,63 @@
       "Bréchet",
       "Jérémie Bréchet"
     ],
+    "nationality": "",
+    "position": "Défenseur",
+    "position_raw": "Left-back, left midfielder",
     "clubs": [
       {
         "name": "Lyon",
-        "loan": false
+        "loan": false,
+        "from": 1998,
+        "to": 2003
       },
       {
         "name": "Inter Milan",
-        "loan": false
+        "loan": false,
+        "from": 2003,
+        "to": 2004
       },
       {
         "name": "Real Sociedad",
-        "loan": false
+        "loan": false,
+        "from": 2004,
+        "to": 2006
       },
       {
         "name": "Sochaux",
-        "loan": false
+        "loan": false,
+        "from": 2006,
+        "to": 2008
       },
       {
         "name": "PSV",
-        "loan": false
+        "loan": false,
+        "from": 2008,
+        "to": 2009
       },
       {
         "name": "Sochaux",
-        "loan": false
+        "loan": false,
+        "from": 2009,
+        "to": 2012
       },
       {
         "name": "Troyes",
-        "loan": false
+        "loan": false,
+        "from": 2012,
+        "to": 2013
       },
       {
         "name": "Bordeaux",
-        "loan": false
+        "loan": false,
+        "from": 2013,
+        "to": 2014
       },
       {
         "name": "Gazélec Ajaccio",
-        "loan": false
+        "loan": false,
+        "from": 2014,
+        "to": 2018
       }
     ],
     "wiki": "https://en.wikipedia.org/wiki/J%C3%A9r%C3%A9mie_Br%C3%A9chet"
@@ -735,62 +1066,93 @@
       "Cissé",
       "Djibril Cissé"
     ],
+    "nationality": "",
+    "position": "Attaquant",
+    "position_raw": "Forward",
     "clubs": [
       {
         "name": "Auxerre",
-        "loan": false
+        "loan": false,
+        "from": 1998,
+        "to": 2004
       },
       {
         "name": "Liverpool",
-        "loan": false
+        "loan": false,
+        "from": 2004,
+        "to": 2007
       },
       {
         "name": "Marseille",
-        "loan": true
+        "loan": true,
+        "from": 2006,
+        "to": 2009
       },
       {
         "name": "Sunderland",
-        "loan": true
+        "loan": true,
+        "from": 2008,
+        "to": 2009
       },
       {
         "name": "Panathinaikos",
-        "loan": false
+        "loan": false,
+        "from": 2009,
+        "to": 2011
       },
       {
         "name": "Lazio",
-        "loan": false
+        "loan": false,
+        "from": 2011,
+        "to": 2012
       },
       {
         "name": "Queens Park Rangers",
-        "loan": false
+        "loan": false,
+        "from": 2012,
+        "to": 2013
       },
       {
         "name": "Al-Gharafa",
-        "loan": true
+        "loan": true,
+        "from": 2013,
+        "to": 2013
       },
       {
         "name": "Kuban Krasnodar",
-        "loan": false
+        "loan": false,
+        "from": 2013,
+        "to": 2013
       },
       {
         "name": "Bastia",
-        "loan": false
+        "loan": false,
+        "from": 2014,
+        "to": 2015
       },
       {
         "name": "Saint-Pierroise",
-        "loan": false
+        "loan": false,
+        "from": 2015,
+        "to": 2015
       },
       {
         "name": "Yverdon",
-        "loan": false
+        "loan": false,
+        "from": 2017,
+        "to": 2018
       },
       {
         "name": "AC Vicenza 1902",
-        "loan": false
+        "loan": false,
+        "from": 2018,
+        "to": 2019
       },
       {
         "name": "Panathinaikos Chicago",
-        "loan": false
+        "loan": false,
+        "from": 2021,
+        "to": 2021
       }
     ],
     "wiki": "https://en.wikipedia.org/wiki/Djibril_Ciss%C3%A9"
@@ -801,22 +1163,33 @@
       "Benoît Trémoulinas",
       "Trémoulinas"
     ],
+    "nationality": "",
+    "position": "Défenseur",
+    "position_raw": "Left-back",
     "clubs": [
       {
         "name": "Bordeaux",
-        "loan": false
+        "loan": false,
+        "from": 2007,
+        "to": 2013
       },
       {
         "name": "Dynamo Kyiv",
-        "loan": false
+        "loan": false,
+        "from": 2013,
+        "to": 2014
       },
       {
         "name": "Saint-Étienne",
-        "loan": true
+        "loan": true,
+        "from": 2014,
+        "to": 2014
       },
       {
         "name": "Sevilla",
-        "loan": false
+        "loan": false,
+        "from": 2014,
+        "to": 2017
       }
     ],
     "wiki": "https://en.wikipedia.org/wiki/Beno%C3%AEt_Tr%C3%A9moulinas"
@@ -827,34 +1200,51 @@
       "Moussa Sissoko",
       "Sissoko"
     ],
+    "nationality": "",
+    "position": "Milieu",
+    "position_raw": "Midfielder",
     "clubs": [
       {
         "name": "Toulouse",
-        "loan": false
+        "loan": false,
+        "from": 2007,
+        "to": 2013
       },
       {
         "name": "Newcastle United",
-        "loan": false
+        "loan": false,
+        "from": 2013,
+        "to": 2016
       },
       {
         "name": "Tottenham Hotspur",
-        "loan": false
+        "loan": false,
+        "from": 2016,
+        "to": 2021
       },
       {
         "name": "Watford",
-        "loan": false
+        "loan": false,
+        "from": 2021,
+        "to": 2022
       },
       {
         "name": "Nantes",
-        "loan": false
+        "loan": false,
+        "from": 2022,
+        "to": 2024
       },
       {
         "name": "Watford",
-        "loan": false
+        "loan": false,
+        "from": 2024,
+        "to": 2026
       },
       {
         "name": "Panathinaikos",
-        "loan": false
+        "loan": false,
+        "from": 2026,
+        "to": null
       }
     ],
     "wiki": "https://en.wikipedia.org/wiki/Moussa_Sissoko"
@@ -865,30 +1255,45 @@
       "Franck Jurietti",
       "Jurietti"
     ],
+    "nationality": "",
+    "position": "Défenseur",
+    "position_raw": "Full-back",
     "clubs": [
       {
         "name": "Lyon",
-        "loan": false
+        "loan": false,
+        "from": 1993,
+        "to": 1994
       },
       {
         "name": "Gueugnon",
-        "loan": false
+        "loan": false,
+        "from": 1994,
+        "to": 1997
       },
       {
         "name": "Bastia",
-        "loan": false
+        "loan": false,
+        "from": 1997,
+        "to": 2000
       },
       {
         "name": "Monaco",
-        "loan": false
+        "loan": false,
+        "from": 2000,
+        "to": 2003
       },
       {
         "name": "Marseille",
-        "loan": true
+        "loan": true,
+        "from": 2001,
+        "to": 2002
       },
       {
         "name": "Bordeaux",
-        "loan": false
+        "loan": false,
+        "from": 2003,
+        "to": 2010
       }
     ],
     "wiki": "https://en.wikipedia.org/wiki/Franck_Jurietti"
@@ -899,30 +1304,45 @@
       "Patrick Vieira",
       "Vieira"
     ],
+    "nationality": "",
+    "position": "Milieu",
+    "position_raw": "Midfielder",
     "clubs": [
       {
         "name": "Cannes",
-        "loan": false
+        "loan": false,
+        "from": 1993,
+        "to": 1995
       },
       {
         "name": "AC Milan",
-        "loan": false
+        "loan": false,
+        "from": 1995,
+        "to": 1996
       },
       {
         "name": "Arsenal",
-        "loan": false
+        "loan": false,
+        "from": 1996,
+        "to": 2005
       },
       {
         "name": "Juventus",
-        "loan": false
+        "loan": false,
+        "from": 2005,
+        "to": 2006
       },
       {
         "name": "Inter Milan",
-        "loan": false
+        "loan": false,
+        "from": 2006,
+        "to": 2010
       },
       {
         "name": "Manchester City",
-        "loan": false
+        "loan": false,
+        "from": 2010,
+        "to": 2011
       }
     ],
     "wiki": "https://en.wikipedia.org/wiki/Patrick_Vieira"
@@ -933,22 +1353,33 @@
       "Bernardo Silva",
       "Silva"
     ],
+    "nationality": "",
+    "position": "Milieu",
+    "position_raw": "Midfielder",
     "clubs": [
       {
         "name": "Benfica",
-        "loan": false
+        "loan": false,
+        "from": 2013,
+        "to": 2015
       },
       {
         "name": "Monaco",
-        "loan": true
+        "loan": true,
+        "from": 2014,
+        "to": 2017
       },
       {
         "name": "Manchester City",
-        "loan": false
+        "loan": false,
+        "from": 2017,
+        "to": 2026
       },
       {
         "name": "Real Madrid",
-        "loan": false
+        "loan": false,
+        "from": 2026,
+        "to": null
       }
     ],
     "wiki": "https://en.wikipedia.org/wiki/Bernardo_Silva"
@@ -959,46 +1390,69 @@
       "Sessègnon",
       "Stéphane Sessègnon"
     ],
+    "nationality": "",
+    "position": "Milieu",
+    "position_raw": "Midfielder",
     "clubs": [
       {
         "name": "Requins de l'Atlantique",
-        "loan": false
+        "loan": false,
+        "from": 2003,
+        "to": 2004
       },
       {
         "name": "Créteil",
-        "loan": false
+        "loan": false,
+        "from": 2004,
+        "to": 2006
       },
       {
         "name": "Le Mans",
-        "loan": false
+        "loan": false,
+        "from": 2006,
+        "to": 2008
       },
       {
         "name": "Paris Saint-Germain",
-        "loan": false
+        "loan": false,
+        "from": 2008,
+        "to": 2011
       },
       {
         "name": "Sunderland",
-        "loan": false
+        "loan": false,
+        "from": 2011,
+        "to": 2013
       },
       {
         "name": "West Bromwich Albion",
-        "loan": false
+        "loan": false,
+        "from": 2013,
+        "to": 2016
       },
       {
         "name": "Montpellier",
-        "loan": false
+        "loan": false,
+        "from": 2016,
+        "to": 2018
       },
       {
         "name": "Gençlerbirliği",
-        "loan": false
+        "loan": false,
+        "from": 2018,
+        "to": 2020
       },
       {
         "name": "Göçmenköy",
-        "loan": false
+        "loan": false,
+        "from": 2022,
+        "to": 2022
       },
       {
         "name": "Sirens",
-        "loan": false
+        "loan": false,
+        "from": 2022,
+        "to": 2023
       }
     ],
     "wiki": "https://en.wikipedia.org/wiki/St%C3%A9phane_Sess%C3%A8gnon"
@@ -1009,38 +1463,57 @@
       "Cantona",
       "Eric Cantona"
     ],
+    "nationality": "",
+    "position": "Attaquant",
+    "position_raw": "Forward",
     "clubs": [
       {
         "name": "Auxerre",
-        "loan": false
+        "loan": false,
+        "from": 1983,
+        "to": 1988
       },
       {
         "name": "Martigues",
-        "loan": true
+        "loan": true,
+        "from": 1985,
+        "to": 1986
       },
       {
         "name": "Marseille",
-        "loan": false
+        "loan": false,
+        "from": 1988,
+        "to": 1991
       },
       {
         "name": "Bordeaux",
-        "loan": true
+        "loan": true,
+        "from": 1989,
+        "to": 1989
       },
       {
         "name": "Montpellier",
-        "loan": true
+        "loan": true,
+        "from": 1989,
+        "to": 1990
       },
       {
         "name": "Nîmes",
-        "loan": false
+        "loan": false,
+        "from": 1991,
+        "to": 1992
       },
       {
         "name": "Leeds United",
-        "loan": true
+        "loan": true,
+        "from": 1992,
+        "to": 1992
       },
       {
         "name": "Manchester United",
-        "loan": false
+        "loan": false,
+        "from": 1992,
+        "to": 1997
       }
     ],
     "wiki": "https://en.wikipedia.org/wiki/Eric_Cantona"
@@ -1051,54 +1524,81 @@
       "Dalmat",
       "Stéphane Dalmat"
     ],
+    "nationality": "",
+    "position": "Milieu",
+    "position_raw": "Midfielder",
     "clubs": [
       {
         "name": "Châteauroux",
-        "loan": false
+        "loan": false,
+        "from": 1997,
+        "to": 1998
       },
       {
         "name": "Lens",
-        "loan": false
+        "loan": false,
+        "from": 1998,
+        "to": 1999
       },
       {
         "name": "Marseille",
-        "loan": false
+        "loan": false,
+        "from": 1999,
+        "to": 2000
       },
       {
         "name": "Paris Saint-Germain",
-        "loan": false
+        "loan": false,
+        "from": 2000,
+        "to": 2001
       },
       {
         "name": "Inter Milan",
-        "loan": false
+        "loan": false,
+        "from": 2001,
+        "to": 2005
       },
       {
         "name": "Tottenham Hotspur",
-        "loan": true
+        "loan": true,
+        "from": 2003,
+        "to": 2004
       },
       {
         "name": "Toulouse",
-        "loan": true
+        "loan": true,
+        "from": 2004,
+        "to": 2005
       },
       {
         "name": "Racing Santander",
-        "loan": false
+        "loan": false,
+        "from": 2005,
+        "to": 2006
       },
       {
         "name": "Bordeaux",
-        "loan": false
+        "loan": false,
+        "from": 2006,
+        "to": 2007
       },
       {
         "name": "Sochaux",
-        "loan": false
+        "loan": false,
+        "from": 2007,
+        "to": 2010
       },
       {
         "name": "Rennes",
-        "loan": false
+        "loan": false,
+        "from": 2010,
+        "to": 2012
       },
       {
         "name": "Nîmes",
-        "loan": false
+        "loan": false,
+        "from": 2012,
+        "to": 2013
       }
     ],
     "wiki": "https://en.wikipedia.org/wiki/St%C3%A9phane_Dalmat"
