@@ -150,7 +150,7 @@ canvas{position:fixed;inset:0;pointer-events:none;z-index:10}
         <input id="guess" type="text" placeholder="Nom du joueur" aria-label="Nom du joueur" autocapitalize="words" spellcheck="false">
         <button type="submit">Valider</button>
       </form>
-      <div class="row"><button type="button" class="ghost" id="hintbtn">Indice : nationalité (−5 pts)</button><button type="button" class="ghost" id="giveup">Je ne sais pas</button></div>
+      <div class="row" style="flex-wrap:wrap;gap:4px 16px"><button type="button" class="ghost" id="hintbtn">Indice : nationalité (−5 pts)</button><button type="button" class="ghost" id="hintpos">Indice : poste (−3 pts)</button><button type="button" class="ghost" id="giveup">Je ne sais pas</button></div>
     </div>
 
     <div class="result" id="result">
@@ -228,7 +228,7 @@ canvas{position:fixed;inset:0;pointer-events:none;z-index:10}
 <script>
 (function(){
   "use strict";
-  var players=[], deck=[], current=null, answered=false, good=0, total=0, streak=0, points=0, best=0, shown=0, hinted=false;
+  var players=[], deck=[], current=null, answered=false, good=0, total=0, streak=0, points=0, best=0, shown=0, hintNat=false, hintPos=false;
   try{best=parseInt(localStorage.getItem("foot-best"),10)||0}catch(e){}
   var $=function(id){return document.getElementById(id)};
   var card=$("card"), clubsEl=$("clubs"), guess=$("guess");
@@ -310,6 +310,14 @@ canvas{position:fixed;inset:0;pointer-events:none;z-index:10}
   }
 
   // --- Affichage ---------------------------------------------------------
+  function showHints(){
+    var parts=[];
+    if(hintNat&&current&&current.nationality) parts.push("Nationalité : "+current.nationality);
+    if(hintPos&&current&&current.position) parts.push("Poste : "+current.position);
+    var h=$("hinttext"); h.textContent=parts.join(" · "); h.classList.toggle("hidden",!parts.length);
+    if(hintNat) $("hintbtn").classList.add("hidden");
+    if(hintPos) $("hintpos").classList.add("hidden");
+  }
   function fmtYears(c){
     if(!c.from) return "";
     if(c.to===null||c.to===undefined) return c.from+"–";
@@ -334,20 +342,21 @@ canvas{position:fixed;inset:0;pointer-events:none;z-index:10}
       if(c.loan){var t=document.createElement("span");t.className="tag";t.textContent="prêt";li.appendChild(t)}
       clubsEl.appendChild(li);
     });
-    hinted=false; $("hinttext").classList.add("hidden");
-    var hb=$("hintbtn"); hb.classList.toggle("hidden",!p.nationality); hb.disabled=false;
+    hintNat=false; hintPos=false; showHints();
+    $("hintbtn").classList.toggle("hidden",!p.nationality);
+    $("hintpos").classList.toggle("hidden",!p.position);
     guess.value=""; guess.disabled=false; guess.focus({preventScroll:true});
   }
 
   function finish(ok,gaveUp){
     if(answered||!current) return;
     answered=true;
-    var gain=award(ok,hinted?5:0);
+    var gain=award(ok,(hintNat?5:0)+(hintPos?3:0));
     card.className="card "+(ok?"good":"bad");
     $("game").classList.add("hidden");
     var v=$("verdict");
     v.className="verdict "+(ok?"ok":"ko");
-    v.textContent=ok?"Bien joué ! +"+gain+" pts"+(hinted?" (indice −5)":""):(gaveUp?"Pas de souci.":"Raté !");
+    v.textContent=ok?"Bien joué ! +"+gain+" pts"+((hintNat||hintPos)?" (avec indice)":""):(gaveUp?"Pas de souci.":"Raté !");
     var a=$("answer"); a.textContent="C’était ";
     var strong=document.createElement("strong"); strong.textContent=current.name; a.appendChild(strong);
     if(current.wiki){
@@ -368,9 +377,11 @@ canvas{position:fixed;inset:0;pointer-events:none;z-index:10}
   $("giveup").addEventListener("click",function(){finish(false,true)});
   $("hintbtn").addEventListener("click",function(){
     if(answered||!current||!current.nationality) return;
-    hinted=true; this.classList.add("hidden");
-    var h=$("hinttext"); h.textContent="Nationalité : "+current.nationality; h.classList.remove("hidden");
-    guess.focus({preventScroll:true});
+    hintNat=true; showHints(); guess.focus({preventScroll:true});
+  });
+  $("hintpos").addEventListener("click",function(){
+    if(answered||!current||!current.position) return;
+    hintPos=true; showHints(); guess.focus({preventScroll:true});
   });
   $("next").addEventListener("click",function(){
     if(!players.length) return;
